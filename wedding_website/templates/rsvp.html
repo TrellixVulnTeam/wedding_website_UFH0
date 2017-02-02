@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}RSVP{% endblock %}
+
+{% block content %}
+	<style type="text/css">
+    ul.errorlist {
+        margin: 0;
+        padding: 0;
+    }
+    .errorlist li {
+        background-color: red;
+        color: white;
+        display: block;
+        font-size: 10px;
+        margin: 0 0 3px;
+        padding: 4px 5px;
+    }
+	</style>
+	<h1>Enter your first and last name below:</h1>
+
+	<form action="" method="post">
+		<table>
+			{{ form.as_table }}
+		</table>
+		{% csrf_token %}
+		<input type="submit" name = "search" value="Submit">
+	</form>
+    <br>
+	<br>
+	
+	{% if group_name %}
+		{% if num_coming == -1%}
+			<form action="" method="post">
+				{% for invitee in invitees %}
+					 {{ invitee.first_name }}&nbsp;{{ invitee.last_name }}&nbsp;<input type="checkbox" name="checkbox" value="{{ invitee }}"><br>
+				{% endfor %}
+				<input type="hidden" name = "group_name" value="{{ group_name }}">
+				<input type="submit" name = "RSVP" value="RSVP">
+				{% csrf_token %}
+			</form>
+		{% else %}
+			<p>Your group has already RSVP'd for the wedding. Here's the RSVP information.</p><br>
+			<ul>
+			{% for invitee in invitees %}
+				<li>{{ invitee.first_name }}&nbsp;{{ invitee.last_name }}&nbsp;-&nbsp;{% if invitee.confirmed == True %}Coming{% else %}Not Coming{% endif %}</li>
+			{% endfor %}
+			</ul>
+			<p>If you would like to change your RSVP information, contact Jackson or Emma.</p>
+		{% endif %}
+	{% endif %}
+	
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

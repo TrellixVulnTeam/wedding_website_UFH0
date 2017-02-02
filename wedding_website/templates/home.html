@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+	{% load static %}
+    <img src="{% static 'jackson_and_emma.jpg' %}"></img>
+	<p>Welcome to our wedding website! Yipee skippee</p>
+	<script src="{% static 'app.js' %}"></script>
+{% endblock %}
