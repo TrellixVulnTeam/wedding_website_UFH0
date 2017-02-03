@@ -1,32 +1,9 @@
 from django.shortcuts import render
-from wedding_website.forms import SignUpForm, SearchForm, RSVPForm
+from wedding_website.forms import SearchForm, RSVPForm
 from django.http import HttpResponse
 from wedding_database.models import Invitee, Group
 from django.forms import formset_factory
 
-def login(request):
-	return render(request, 'login.html')
-	
-def sign_up(request):
-	if request.method == 'POST':
-		form = SignUpForm(request.POST)
-		if form.is_valid():
-			cd = form.cleaned_data
-			return HttpResponse("You did it!")
-	else:
-		form = SignUpForm()
-	return render(request, 'signup.html', {'form': form})
-	
-# def contact(request):
-	# if request.method == 'POST':
-		# form = ContactForm(request.POST)
-		# if form.is_valid():
-			# cd = form.cleaned_data
-			# send_mail(cd['subject'], cd['message'], cd.get('email', 'noreply@example.com'), ['siteowner@example.com'],)
-			# return HttpResponseRedirect('/contact/thanks')
-	# else:
-		# form = ContactForm()
-	# return render(request, 'contact_form.html', {'form': form})
 	
 def base(request):
 	return render(request, 'base.html')
@@ -76,7 +53,7 @@ def rsvp(request):
 				invitee.save()
 				
 			#print str(confirmed_list) + " " + str(group_name) + "length of list: " + str(len(list(confirmed_list)))
-			return render(request, 'rsvp-thanks.html')
+			return render(request, 'weddinginfo.html', {'rsvp' : True})
 	else:
 		form = SearchForm()
 	return render(request, 'rsvp.html', {'form' : form})
