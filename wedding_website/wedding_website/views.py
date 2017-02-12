@@ -63,29 +63,7 @@ def rsvp_thanks(request):
 	return render(request, 'rsvp-thanks.html')
 
 	
-# def rsvp(request):
-	# if request.method == 'POST':
-		# form = SearchForm(request.POST)
-		# if form.is_valid():
-			# first_name = form.cleaned_data['first_name']
-			# last_name = form.cleaned_data['last_name']
-			# try:
-				# group = Invitee.objects.get(first_name__iexact = str(first_name), last_name__iexact = str(last_name))
-				# coming = Group.objects.get(group_name = group.group)
-				# form.fields['first_name'].initial = first_name
-				# form.fields['last_name'].initial = last_name
-				# invitees = coming.invitee_set.all()
-			# except:
-				# from django.forms.util import ErrorList
-				# form.add_error('first_name', u"No records were found with that first and last name. Check yo spelling bruh.")
-				# return render(request, 'rsvp.html', {'form': form})
-			# return render(request, 'rsvp.html', {'form' : form, 'group_name' : coming.group_name, 'num_coming' : coming.num_coming, 'num_invited' : coming.num_invited, 'invitees' : invitees})
-		# else:
-			# form = SearchForm()
-			# return render(request, 'rsvp.html', {'form' : form})
-	# else:
-		# form = SearchForm()
-	# return render(request, 'rsvp.html', {'form' : form})
+
 	
 def registry(request):
 	return render(request, 'registry.html')

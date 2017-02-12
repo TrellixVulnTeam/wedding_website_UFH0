@@ -29,3 +29,4 @@ urlpatterns = [
 	url(r'^contact/$', views.contact, name='contact'),
 	url(r'^rsvp-thanks/$', views.rsvp_thanks, name='rsvp-thanks'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
