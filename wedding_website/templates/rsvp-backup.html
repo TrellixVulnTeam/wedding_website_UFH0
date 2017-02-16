@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}RSVP{% endblock %}
+
+{% block content %}
+	<style type="text/css">
+    ul.errorlist {
+        margin: 0;
+        padding: 0;
+    }
+    .errorlist li {
+        background-color: red;
+        color: white;
+        display: block;
+        font-size: 10px;
+        margin: 0 0 3px;
+        padding: 4px 5px;
+    }
+	</style>
+	<h1>Enter your first and last name below:</h1>
+
+	{% if form.errors %}
+		<ul>
+		{% for error in form.errors %}
+		<li style="color: red;">
+			{{ error }}
+		</li>
+		{% endfor %}
+		</ul>
+	{% endif %}
+	
+	<form action="" method="post">
+		<table>
+			{{ form.as_table }}
+		</table>
+		{% csrf_token %}
+		<input type="submit" name = "search" value="Submit">
+	</form>
+    
+	
+	{% if group_name %}
+	<ul>
+	<li>Group name: {{ group_name }}.</li>
+	<li>Number Invited: {{ num_invited }}.</li>
+	{% if num_coming == -1 %}
+	<li>You have yet to RSVP for the wedding! Hurry yo ass up.</li>
+	<form action=''>
+		<input type="Submit" name = "RSVP" value = "RSVP">
+	</form>
+	{% else %}
+	<li>Your group has already RSVP'd for the wedding. Here's the RSVP information.</li>
+	</ul>
+	{% endif %}
+	{% endif %}
+	
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

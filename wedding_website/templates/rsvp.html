@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+<!DOCTYPE HTML> 
+<html>
+    <head>
+		{% block title %}{% endblock %}
+	</head>
+
+	<body>
+	{% block content %}
+	<div class="page-div">
+		<h1 id="RSVP-header">Enter your first and last name below:</h1>
+
+		<form id="RSVP-form" action="" method="post">
+			<table>
+				{{ form.as_table }}
+			</table>
+			{% csrf_token %}
+			<input id="RSVP-submit" type="submit" name = "search" value="Submit">
+		</form>
+	    <br>
+		<br>
+		
+		{% if group_name %}
+			{% if num_coming == -1%}
+				<form action="" method="post">
+					{% for invitee in invitees %}
+						 {{ invitee.first_name }}&nbsp;{{ invitee.last_name }}&nbsp;<input type="checkbox" name="checkbox" value="{{ invitee }}"><br>
+					{% endfor %}
+					<input type="hidden" name = "group_name" value="{{ group_name }}">
+					<input type="submit" name = "RSVP" value="RSVP">
+					{% csrf_token %}
+				</form>
+			{% else %}
+				<p>Your group has already RSVP'd for the wedding. Here's the RSVP information.</p><br>
+				<ul>
+				{% for invitee in invitees %}
+					<li>{{ invitee.first_name }}&nbsp;{{ invitee.last_name }}&nbsp;-&nbsp;{% if invitee.confirmed == True %}Coming{% else %}Not Coming{% endif %}</li>
+				{% endfor %}
+				</ul>
+				<p>If you would like to change your RSVP information, contact Jackson or Emma.</p>
+			{% endif %}
+		{% endif %}
+	</div>
+	{% endblock %}
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

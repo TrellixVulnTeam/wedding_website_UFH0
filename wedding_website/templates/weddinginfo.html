@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+<!DOCTYPE HTML> 
+<html>
+    <head>
+		{% block title %}{% endblock %}
+	</head>
+	
+	<body>
+		{% block content %}
+		<div class="page-div">
+			{% if rsvp == True %}
+				<p>Thanks for the RSVP! Here's some information about the wedding.</p>
+			{% endif %}
+	    	
+	    	<br/>
+	    	<br/>
+
+			<p>Hotel Information:<br/><strong>Holiday Inn Express & Suites.</strong><br/>109.99 a night for a Double Queen Room, 104.99 a night for a King Room.<br/></p>
+
+			<p><br/><strong>Hampton Inn</strong><br/>104.99 a night for either a Double Queen Room or a King Room.<br/></p>
+
+			<iframe src="https://www.google.com/maps/d/u/0/embed?mid=12KefaevJp3EnEOxCzFzUjjfMck8" width="640" height="480"></iframe>
+		</div>
+		{% endblock %}
+	</body>
+</html>
