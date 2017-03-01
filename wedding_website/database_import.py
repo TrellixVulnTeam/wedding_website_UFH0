@@ -1,7 +1,6 @@
 import csv 
 import os
 import django
-import sys
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "wedding_website.settings")
 django.setup()
@@ -10,10 +9,8 @@ from wedding_database.models import Invitee, Group
 
 Group.objects.all().delete()
 Invitee.objects.all().delete()
-         
-path = os.path.abspath(os.path.dirname(sys.argv[0])) 
 
-f = open(path + '\\wedding_database\\RSVP Database Info.csv', 'r')
+f = open('C:\\Users\\jackson\\wedding_website\\wedding_website\\wedding_database\\RSVP Database Info.csv', 'rb')
 reader = list(csv.reader(f))
 for x in range(1, len(reader)):
 	if reader[x][4] != '':
