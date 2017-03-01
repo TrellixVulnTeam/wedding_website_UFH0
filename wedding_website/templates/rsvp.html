@@ -48,6 +48,15 @@
 			</ul>
 			<p>If you would like to change your RSVP information, contact Jackson or Emma.</p>
 		{% endif %}
+	{% elif group_list %}
+		<p>There is more than one attendee in the system with that name. Please choose the correct group to which you belong.</p>
+		<form action="" method="post">
+				{% for group in group_list%}
+					 {{ group }}&nbsp;<input type="checkbox" name="checkbox" value="{{ group }}"><br>
+				{% endfor %}
+				<input type="submit" name = "Group Select" value="OK">
+				{% csrf_token %}
+			</form>
 	{% endif %}
 	
 {% endblock %}
