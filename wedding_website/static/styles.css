@@ -1,39 +1,74 @@
 @import url('https://fonts.googleapis.com/css?family=Bahiana');
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 @import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:100,300');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
 /* ===========================================
 base 
 ============================================== */
 body {
-	margin:0;
-	font-family:arial;
-	color:#B8DDB4;
+    padding:0 auto;
+	margin:0 auto;
 	font-size:20px;
+	font-family: 'Roboto', sans-serif;
+    text-decoration:none;
 }
 
 #nav {
 	width:100%;
-	font-size:1.1em;
-	margin:0 auto;
+	margin:10 auto;
 	list-style:none;
 	position:fixed;
-	border-bottom:#B8DDB4 solid 1px;
-	background-color: rgba(255, 255, 255, .55);
-}
+	background-color: rgba(255, 255, 255, 0);
+	font-family: 'Roboto', sans-serif;
+	border: none;
+} 
 
 #nav li {
-	float:left;
+	float:right;
 	margin:10px auto;
-	padding:0px 0px 10px 0px;
+	padding:30px 0px 10px 0px;4
+}
+
+#nav li:hover {
+	opacity: .5;
 }
 
 #nav a {
-	color:#6b9966;
+	color:#ffffff;
 	display:block;
 	text-align:center;
 	width:150px; /* fixed width */
 	text-decoration:none; 
+}
+
+#nav li:first-child {
+	padding-right:40px;
+
+}
+
+#nav li:last-child {
+	float:left;
+	padding-left:40px;
+	color:#ffb570;
+
+}
+
+.navButton {
+	border:#ffffff solid 1px;
+	padding:10px 0px 10px 0px;
+
+
+}
+
+.navButton:hover {
+	background-color:#ffffff;
+}
+
+#navB a:hover {
+	color:#000000;
 }
 
 .container {
@@ -41,11 +76,27 @@ body {
   margin: 0 auto;
 }
 
+
 .page-div {
-	padding-top:200px;
-	text-align:center;
+padding-top:0px;
+margin-top:0px;
+} 
+
+.footer {
+    height:100px;
+    background:rgba(0,0,0, .88);
 }
 
+.footer p {
+    color:#000000;
+    font-size:1em;
+    padding-top: 40px;
+}
+
+iframe {
+    padding:40px;
+    border:none;
+}
 /* ===========================================
 hidden classes 
 ============================================== */
@@ -73,10 +124,40 @@ ul.errorlist {
 home 
 ============================================== */
 
+.homeh1 {
+    font-size:3.9em;
+	color:#ffffff;
+	font-family: 'Roboto', sans-serif;
+}
+
+.homeh2 {
+    margin-top: 130px;
+    font-size: 1.5em;
+    color:#474747;
+    font-family: 'Roboto', sans-serif;
+}
+
+.homep {
+    color:#9b9b9b;
+	font-family: 'Roboto', sans-serif;
+    margin-bottom:20px;
+    font-size: 1.2em;
+
+}
+
+.descriptionP {
+    padding-top:30px;
+    padding-bottom: 40px;
+    width:600px;
+    color:#494949;
+    margin:auto;
+    font-size:.85em;
+}
+
 .home-div {
 	text-align:center;
 	background-image:none;
-	height:768px;
+	/*height:768px; */
 	margin:0;
 	padding:0;
 }
@@ -84,20 +165,22 @@ home
 .home-div.parallax {
 	background-repeat:no-repeat;
 	background-attachment:fixed;
-	background-size:cover;
+	background-size:cover; 
 	background-position: 50% 50%;
 	background-color: rgba(0,0,0, .5);
 }
 
+.non-main {
+    height: 500px;
+}
+
+
 .home-div button {
-	font-family: arial, cursive;
-	background-color:#B8DDB4;
-	border:#B8DDB4 solid 3px;
 	padding:20px 40px;
 	font-size:1.6em;
-	color:#B8DDB4;
 	position:relative;
-}
+} 
+
 
 .home-div.parallax button {
 	background:none;
@@ -105,47 +188,210 @@ home
 	border:#ffffff solid 3px;
 	color:#ffffff;
 	position:relative;
-}
-
-
-.home-div h2 {
-	color:#B8DDB4;
-	font-family:'pacifico', cursive;
-	font-size:1.6em;
-
-}
-
-.home-div.parallax h2 {
-	color:#ffffff;
-}
-
-.home-div a {
-	text-decoration:none;
-	color:#ffffff;
-}
-
-#home-about {
-	/* background:#CEBBDB; */
-	background-image: url("YJsectionFirst.jpg");
-}
-
-#home-wedding-info {
-	height:850px;
-
-}
+} 
 
 #home-RSVP {
-	/* background:#CEBBDB; */
-	background-image:url("YJheader-01.jpg");
-}
-
-#home-registry {
+	background-image:url("img/siteHeader.jpg"); 
 
 }
+
+#home-RSVP button{
+	font-size:1.2em;
+    border: #ffb570 solid .5px;
+    color: #ffb570;
+    padding:5px 30px;
+
+}
+
+#home-RSVP button:hover {
+	font-size:1.2em;
+    border: #ffb570 solid .5px;
+    background-color: #ffb570;
+    color: #000000;
+    opacity: .59;
+    font-family: 'Roboto', sans-serif;
+}
+
+#home-RSVP a{
+    color: #ffb570;
+
+}
+
+#home-RSVP a:hover {
+    color:rgba(0,0,0,.5);
+    text-decoration:none;
+
+}
+
+
+
+
+
+
+/* begin original section */
+#home-ourStory  {
+    
+}
+
+#home-ourStory .row {
+    padding-top:50px;
+    padding-bottom: 50px;
+}
+
+#home-ourStory h3  {
+    padding-top:30px;
+    font-family: sans-serif;
+    color:#494949;
+}
+
+#home-ourStory .storyBlurb  {
+    padding-top:30px;
+    padding-bottom: 40px;
+    width:300px;
+    color:#494949;
+    margin:auto;
+    font-size:.85em;
+    
+}
+
+#home-ourStory button {
+    background:none;
+	background-color:none;
+	border:#ffb570 solid 3px;
+	color:#ffb570;
+	position:relative;
+    font-size:1.2em;
+    padding:10px 20px;
+}
+
+#home-ourStory a {
+    font-size:1em;
+    color:#ffb570;
+    text-decoration:none;
+}
+
+#home-ourStory a:hover {
+    color:#ffffff;
+}
+
+#home-ourStory button:hover {
+    background:none;
+	background-color:#ffb570;
+	border:#ffffff solid 3px;
+	color:#ffffff;
+	position:relative;
+}
+
+#home-ourStory .homep {
+    color:#F9B862;
+    font-size:0.9em;
+    font-family: sans-serif;
+}
+
+#home-ourStory .storyImage {
+    margin:auto;
+    padding:auto;
+    height:180px;
+    width:300px;
+    background-size:cover;
+    background-position: 50% 50%;
+}
+/* end original section */
+
+
+#firstStory {
+    background-image: url("img/emmaJack3.jpg");
+}
+
+#secondStory {
+    background-image: url("img/jackMa.jpg");
+}
+
+#thirdStory {
+    background-image: url("img/emmaJack.jpg");
+}
+
+
+#home-arrive {
+	background-image: url("img/home2.jpg");
+}
+
+/* THIS MODULE MAY LEAD TO PROGRAMATIC LAYOUT PROBLEMS */
+#home-arrive .homeh1 {
+    position:relative;
+	padding-top: 200px;
+
+}
+
+#home-schedule {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#home-schedule h3  {
+    padding-top:30px;
+    font-family: sans-serif;
+    color:#494949;
+}
+
+
+#home-schedule .homep {
+    color:#F9B862;
+    font-size:0.9em;
+    font-family: sans-serif;
+}
+
+#home-schedule .storyBlurb  {
+    line-height:40px;
+    padding-top:30px;
+    padding-bottom: 40px;
+    margin:auto;
+    width:300px;
+    color:#494949;
+    margin:auto;
+    font-size:.85em;
+    
+}
+
 
 #home-contact {
-	/* background:#CEBBDB; */
-	background-image:url('madison.jpg');
+	background-image:url('img/home3.jpg');
+    background-position: 50% 5%;
+}
+
+#home-contact .homeh1 {
+    position:relative;
+	padding-top: 200px;
+
+}
+
+#home-contact button{
+	font-size:1.2em;
+    border: #ffb570 solid .5px;
+   
+    padding:5px 30px;
+
+}
+
+#home-contact a{
+	font-size:1.2em;
+    color: #ffb570;
+    text-decoration:none;
+}
+
+#home-contact button:hover {
+	font-size:1.2em;
+    border: #ffb570 solid .5px;
+    background-color: #ffb570;
+   
+    opacity: .59;
+    font-family: 'Roboto', sans-serif;
+}
+#home-contact a:hover {
+    color: #000000;
+    text-decoration:none;
+    opacity: .59;
+    font-family: 'Roboto', sans-serif;
 }
 
 #home-RSVP div {
@@ -153,13 +399,22 @@ home
 	top:40%;
 } 
 
-#home-RSVP-button:focus {
-	outline:none;
-}
-
 /* ===========================================
 registry
 ============================================== */
+
+#registry-page {
+	background-image:url("img/gifts2d.jpg"); 
+    background-size: 1900px 700px;
+    background-position:50% 0%;
+
+}
+
+#registry-page .homeh1{
+	margin-top:230px;
+    
+
+}
 
 #registery-links {
 	float:center;
@@ -167,9 +422,24 @@ registry
 	padding:10px;
 }
 
+.registry-text {
+    font-size:1.7em;
+    
+}
+
 /* ===========================================
 contact 
 ============================================== */
+#contact-page {
+    background-image:url("img/home5.jpg"); 
+}
+
+#contact-page .homeh1{
+	margin-top:230px;
+    
+
+}
+
 
 #contact-info {
 	float:center;
@@ -181,25 +451,38 @@ contact
 RSVP 
 ============================================== */
 
+#RSVP-page .homeh1{
+	margin-top:230px;
+    
+
+}
+
+#RSVP-page {
+    background-image:url("img/gifts3d.jpg"); 
+    background-size: 1900px 700px;
+    background-position:50% 0%;
+}
+
 #RSVP-header {
 	clear:both;
 	padding:10px;
-	color:#6c488c;
+	color:#494949;
 }
 
 #RSVP-form {
 	padding-left:43%;
+    padding-bottom:90px;
 }
 
 #RSVP-form table input{
-	border:#AB91C1 solid 0.5px;
-	border-radius:5px;
+    border: #ffb570 solid .5px;
+	border-radius:0px;
 }
 
 #RSVP-submit{
 	border: none;
-	border-radius: 5px;
-	background:#AB91C1;
+	border-radius: 0px;
+	background:#ffb570;
 	color:#ffffff;
 	font-size:1.1em;
 	padding: 5px 10px;
@@ -207,9 +490,51 @@ RSVP
 	float:left;
 }
 
+#RSVP-submit:hover {
+	background:#ffd2aa;
+}
+
 /* ===========================================
-wedding info 
+wedding info page
 ============================================== */
+#wedding-info-page {
+	background-image:url("img/redtail2.jpg"); 
+    background-position: 50% -270px;
+    
+
+}
+
+#wedding-info-page .homeh1{
+	margin-top:230px;
+    
+
+}
+
+#wedding-info-page .homep {
+    color:#cecece;
+}
+
+#what-to-do .homeh1{
+
+}
+
+#what-to-do .homep{
+	
+    
+
+}
+
+#what-to-do .container-fluid{
+	padding-top:160px;
+    margin-top:70px;
+    position:relative;
+
+}
+
+
+#what-to-do {
+	background-image: url("img/redtail.jpg");
+}
 
 
 /* ===========================================

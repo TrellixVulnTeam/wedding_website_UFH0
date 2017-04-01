@@ -8,19 +8,112 @@
 	
 	<body>
 		{% block content %}
-		<div class="page-div">
+		
+       
+        <div class="page-div">
+            
+            <div class="collapse navbar-collapse">
+		      <nav id="nav" class="navbar navbar-default">
+                <li id="navB">{% block nav-rsvp %} <a class="navButton" href="{% url 'rsvp' %}"> RSVP</a> {% endblock %}</li>
+                <li>{% block nav-home %}<a href="{% url 'home' %}">HOME</a>{% endblock %}</li>
+                <li>{% block nav-weddinginfo %}<a href="{% url 'wedding_info' %}"> WEDDING INFO</a>{% endblock %}</li>
+                <li>{% block nav-registry %}<a href="{% url 'registry' %}">REGISTRY</a>{% endblock %}</li>
+                <li>{% block nav-contact %}<a href="{% url 'contact' %}">CONTACT</a>{% endblock %}</li>
+                <li> Jackson and Emma</li>
+            </nav>
+            </div>
+            
 			{% if rsvp == True %}
 				<p>Thanks for the RSVP! Here's some information about the wedding.</p>
 			{% endif %}
-	    	
-	    	<br/>
-	    	<br/>
+            
+            
+            <div id="wedding-info-page" class="home-div parallax" style="height:600px">
+        	<div class="container">
+        		<h1 class="homeh1"> Our Wedding Location </h1>
+                <p class="homep"> Red Tail Farms </p>
+        	</div>
+        </div>
 
-			<p>Hotel Information:<br/><strong>Holiday Inn Express & Suites.</strong><br/>109.99 a night for a Double Queen Room, 104.99 a night for a King Room.<br/></p>
 
-			<p><br/><strong>Hampton Inn</strong><br/>104.99 a night for either a Double Queen Room or a King Room.<br/></p>
+        <div id="home-ourStory" class="home-div page-div">
+            <div class="container-fluid">
+                <h2 class="homeh2">Directions</h2>
+                <p class="descriptionP">Hotel Information is provided below for your convenience. We have a couple hotels to choose from but there are many more available. If you choose to stay at another hotel location feel free to let us know. </p>
+                   
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=12KefaevJp3EnEOxCzFzUjjfMck8" width="70%" height="400"></iframe>
+                
+                    <div class="row" style="padding-top:20px;">
+                    <div class="container-fluid" style="width:900px;">
+                        <div class="col-md-6"> 
+                            
+                            <h3 style="color:#FBC676">Holiday Inn Express & Suites</h3>
+                            <p class="storyBlurb">109.99 a night for a Double Queen Room, 104.99 a night for a King Room. </br> Distance from wedding site: ???</p>
+                        </div>
+                        
+                        <div class="col-md-6">
+                           
+                            <h3 style="color:#FBC676">Hampton Inn</h3>
+                            <p class="storyBlurb">104.99 a night for either a Double Queen Room or a King Room. </br> Distance from wedding site: ???</p>
+                        </div>
+                    </div>
+                    </div> 
+                
+            </div>
+        </div>
 
-			<iframe src="https://www.google.com/maps/d/u/0/embed?mid=12KefaevJp3EnEOxCzFzUjjfMck8" width="640" height="480"></iframe>
+        
+        
+         <div id="what-to-do" class="home-div parallax non-main">
+            <div class="container-fluid" style="text-align:center;">
+            <h1 class="homeh1"> Things to Do </h1>
+            <p class="homep"> Activities in the Elkhart area </p>
+             </div>
+        </div>
+
+
+        <div id="home-schedule" class="home-div">
+            <div class="container-fluid" style="max-width:1100px;">
+                <div class="row">
+                    <p class="descriptionP">Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie. Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text seit 1500, als ein unbekannter Schriftsteller eine Hand voll Wörter nahm und diese durcheinander warf um ein Musterbuch zu erstellen.</p>
+                    <p class="storyBlurb">
+                        Source: <a href="www.wikipedia.com/elkhart" style="text-decoration:none; color:#fbc676;">Wikipedia</a>
+                    </p>
+                </div>
+                    
+                
+                <div class="row">
+                    <div class="col-md-4">
+                    <h3> Food & Drink </h3>
+                    <p class="homep"> Bars, Cafes, Restaurants </p>
+                    <p class="storyBlurb" style="line-height:27px;">
+                        Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie. Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text seit 1500, als ein unbekannter Schriftsteller eine Hand voll Wörter nahm und diese durcheinander warf um ein Musterbuch zu erstellen.
+                    </p>
+                    </div>
+                    
+                    <div class="col-md-4">
+                    <h3>Activities</h3>
+                    <p class="homep"> Paid activities, fun for kids</p>
+                    <p class="storyBlurb" style="line-height:27px;">
+                        Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie. Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text seit 1500, als ein unbekannter Schriftsteller eine Hand voll Wörter nahm und diese durcheinander warf um ein Musterbuch zu erstellen.
+                    </p>
+                    </div>
+                    
+                    <div class="col-md-4">
+                    <h3>Explore</h3>
+                        <p class="homep"> Museums, landmarks, hiking</p>
+                       <p class="storyBlurb" style="line-height:27px;">
+                            Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie. Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text seit 1500, als ein unbekannter Schriftsteller eine Hand voll Wörter nahm und diese durcheinander warf um ein Musterbuch zu erstellen.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-div  footer">
+            <p> Website developed by Jsquared Industries. Copyright 2017 &copy; </p>
+        </div>
+
 		</div>
 		{% endblock %}
 	</body>

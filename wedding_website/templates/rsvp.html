@@ -8,11 +8,45 @@
 
 	<body>
 	{% block content %}
-	<div class="page-div">
-		<h1 id="RSVP-header">Enter your first and last name below:</h1>
+        
+        
+        
+<div class="page-div">
+            
+            <div class="collapse navbar-collapse">
+		      <nav id="nav" class="navbar navbar-default">
+                <li id="navB">{% block nav-rsvp %} <a class="navButton" href="{% url 'rsvp' %}"> RSVP</a> {% endblock %}</li>
+                <li>{% block nav-home %}<a href="{% url 'home' %}">HOME</a>{% endblock %}</li>
+                <li>{% block nav-weddinginfo %}<a href="{% url 'wedding_info' %}"> WEDDING INFO</a>{% endblock %}</li>
+                <li>{% block nav-registry %}<a href="{% url 'registry' %}">REGISTRY</a>{% endblock %}</li>
+                <li>{% block nav-contact %}<a href="{% url 'contact' %}">CONTACT</a>{% endblock %}</li>
+                <li> Jackson and Emma</li>
+            </nav>
+            </div>
+            
+        <div id="RSVP-page" class="home-div parallax" style="height:600px">
+        	<div class="container">
+        		<h1 class="homeh1"> RSVP </h1>
+                <p class="homep" style="color:#dbdbdb;"> Let us know if you can make it</p>
+        	</div>
+        </div>
+
+        
+        
+        
+        
+        <div id="home-ourStory" class="home-div page-div">
+            <div class="container-fluid" style="max-width: 1000px;">
+                <div class="row">
+                    
+                    
+                    
+                    
+                    
+                    <h1 id="RSVP-header" style="margin-top:90px;">Enter your first and last name below:</h1>
 
 		<form id="RSVP-form" action="" method="post">
-			<table>
+			<table style="line-height:40px;">
 				{{ form.as_table }}
 			</table>
 			{% csrf_token %}
@@ -40,17 +74,29 @@
 				</ul>
 				<p>If you would like to change your RSVP information, contact Jackson or Emma.</p>
 			{% endif %}
-		{% elif group_list %}
-		<p>There is more than one attendee in the system with that name. Please choose the correct group to which you belong.</p>
-		<form action="" method="post">
-				{% for group in group_list%}
-					 {{ group }}&nbsp;<input type="checkbox" name="checkbox" value="{{ group }}"><br>
-				{% endfor %}
-				<input type="submit" name = "Group Select" value="OK">
-				{% csrf_token %}
-			</form>
-	{% endif %}
-	</div>
+		{% endif %}
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+                
+            </div>
+        </div>
+
+        
+        <div class="home-div  footer">
+            <p> Website developed by Jsquared Industries. Copyright 2017 &copy; </p>
+    </div>
+
+</div>
+
+
+        
 	{% endblock %}
 	</body>
 </html>

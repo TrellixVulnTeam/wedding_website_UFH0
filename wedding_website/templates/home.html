@@ -8,50 +8,104 @@
 
 	<body>
 		{% block content %}
-
-		<ul id="nav">
-                <li>{% block nav-home %}<a href="{% url 'home' %}">home</a>{% endblock %}</li>
-                <li>{% block nav-about %}<a href="{% url 'about' %}">about</a>{% endblock %}</li>
-                <li>{% block nav-weddinginfo %}<a href="{% url 'wedding_info' %}">wedding Info</a>{% endblock %}</li>
-			     <li>{% block nav-rsvp %}<a href="{% url 'rsvp' %}">rsvp</a>{% endblock %}</li>
-                <li>{% block nav-registry %}<a href="{% url 'registry' %}">registry</a>{% endblock %}</li>
-                <li>{% block nav-contact %}<a href="{% url 'contact' %}">contact</a>{% endblock %}</li>
-            </ul>
+        
+        <div class="collapse navbar-collapse">
+		<nav id="nav" class="navbar navbar-default">
+                <li id="navB">{% block nav-rsvp %} <a class="navButton" href="{% url 'rsvp' %}"> RSVP</a> {% endblock %}</li>
+                <li>{% block nav-home %}<a href="{% url 'home' %}">HOME</a>{% endblock %}</li>
+                <li>{% block nav-weddinginfo %}<a href="{% url 'wedding_info' %}"> WEDDING INFO</a>{% endblock %}</li>
+                <li>{% block nav-registry %}<a href="{% url 'registry' %}">REGISTRY</a>{% endblock %}</li>
+                <li>{% block nav-contact %}<a href="{% url 'contact' %}">CONTACT</a>{% endblock %}</li>
+                <li> Jackson and Emma</li>
+        </nav>
+        </div>
 
 			{% load static %}
 
-        <div id="home-RSVP" class="home-div parallax" style="height:1024px">
+        <div id="home-RSVP" class="home-div parallax" style="height:800px">
         	<div class="container">
-        		<button class="home-div-button" style="background:#B8DDB4;background-color:#B8DDB4; border:#B8DDB4 solid 3px; color:#ffffff; position:relative; margin-top:300px;"> <a href="{% url 'rsvp' %}">RSVP</a> </button>
-        		<!-- <h2 style="color:#53894d;"> Let us know if you can make it </h2> -->
+        		<h1 class="homeh1"> Emma & Jackson </h1>
+                <p class="homep"> Date, Place, State </p>
+                <button> <a href="{% url 'rsvp' %}">RSVP</a></button>
         	</div>
         </div>
 
 
-        <div id="home-wedding-info" class="home-div page-div">
-			
-					<div class="container" style="position:relative; margin-top:100px;">
-						
-						<button class="home-div-button"> <a href="{% url 'wedding_info' %}">Location</a> </button>
-						<h2 style="margin-bottom:60px;">Hotel Info</h2>
+        <div id="home-ourStory" class="home-div page-div">
+            <div class="container-fluid">
+                <h2 class="homeh2">Please join us from (date) as we celebrate our wedding in Elkhart.</h2>
+                <p class="homep"> PHOTOGRAPHY BY UNDEFINED</p>
+                   
+                    <div class="row">
+                        <div class="col-md-4"> 
+                            <div id="firstStory" class="storyImage"></div>
+                            <h3>Jackson's Story</h3>
+                            <p class="storyBlurb">Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie. Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text seit 1500, als ein unbekannter Schriftsteller eine Hand voll Wörter nahm und diese durcheinander warf um ein Musterbuch zu erstellen.</p>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div id="secondStory" class="storyImage"></div>
+                            <h3>Emma's Story</h3>
+                            <p class="storyBlurb">Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie. Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text seit 1500, als ein unbekannter Schriftsteller eine Hand voll Wörter nahm und diese durcheinander warf um ein Musterbuch zu erstellen.</p>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div id="thirdStory" class="storyImage"></div>
+                            <h3>Our Story</h3>
+                            <p class="storyBlurb">Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie. Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text seit 1500, als ein unbekannter Schriftsteller eine Hand voll Wörter nahm und diese durcheinander warf um ein Musterbuch zu erstellen.</p>
+                        </div>
 
-					</div>
+                    </div> 
+                
+            </div>
         </div>
 
-         <div id="home-about" class="home-div parallax">
-
+        
+        
+         <div id="home-arrive" class="home-div parallax non-main">
+            <h1 class="homeh1"> Arrival </h1>
+            <p class="homep"> Month, Day, Year </p>
         </div>
 
 
-        <div id="home-registry" class="home-div">
-
+        <div id="home-schedule" class="home-div">
+            <div class="container-fluid" style="max-width:960px;">
+                <div class="row">
+                    <div class="col-md-4">
+                    <h3>Ceremony Start</h3>
+                    <p class="homep"> 2:00pm </p>
+                    <p class="storyBlurb">
+                        Villa Vivien</br>156 Route de Messery</br>74140 Yvoire</br>+33 06 06 06 06 06
+                    </p>
+                    </div>
+                    
+                    <div class="col-md-4">
+                    <h3>Dinner Party</h3>
+                    <p class="homep"> 3:30pm </p>
+                    <p class="storyBlurb">
+                        Geneve </br>14 Rue du Centre </br> 74140 Excenevex </br>+33 06 06 06 06 06
+                    </p>
+                    </div>
+                    
+                    <div class="col-md-4">
+                    <h3>Recception</h3>
+                        <p class="homep"> 6:00pm </p>
+                        <p class="storyBlurb">
+                            La Plage </br>Avenue de la Plage </br>74140 Excenevex </br>+33 06 06 06 06 06
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div id="home-contact" class="home-div parallax">
-
+        <div id="home-contact" class="home-div parallax non-main">
+            <h1 class="homeh1"> Want more info?</h1>
+           <button><a href="{% url 'contact' %}">Contact Us</a></button>
         </div>
 
-
+        <div class="home-div  footer">
+            <p> Website developed by Jsquared Industries. Copyright 2017 &copy; </p>
+    </div>
 		
 			<script src="{% static 'app.js' %}"></script>
 		{% endblock %}
