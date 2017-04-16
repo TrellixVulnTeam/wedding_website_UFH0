@@ -14,7 +14,7 @@
 <div class="page-div">
             
             <div class="collapse navbar-collapse">
-		      <nav id="nav" class="navbar navbar-default">
+		      <nav id="nav1" class="navbar navbar-default">
                 <li id="navB">{% block nav-rsvp %} <a class="navButton" href="{% url 'rsvp' %}"> RSVP</a> {% endblock %}</li>
                 <li>{% block nav-home %}<a href="{% url 'home' %}">HOME</a>{% endblock %}</li>
                 <li>{% block nav-weddinginfo %}<a href="{% url 'wedding_info' %}"> WEDDING INFO</a>{% endblock %}</li>
@@ -26,8 +26,8 @@
             
         <div id="RSVP-page" class="home-div parallax" style="height:600px">
         	<div class="container">
-        		<h1 class="homeh1"> RSVP </h1>
-                <p class="homep" style="color:#dbdbdb;"> Let us know if you can make it</p>
+        		<h1 class="homeh3"> R&nbsp;&nbsp;S&nbsp;&nbsp;V&nbsp;&nbsp;P </h1>
+                <p class="homep" style="color:#808080;">Kindly respond by May 17, 2017</p>
         	</div>
         </div>
 
@@ -43,7 +43,7 @@
                     
                     
                     
-                    <h1 id="RSVP-header" style="margin-top:90px;">Enter your first and last name below:</h1>
+                    <h1 id="RSVP-header" style="margin-top:90px;">Enter your first and last name below:</h1><br/>
 
 		<form id="RSVP-form" action="" method="post">
 			<table style="line-height:40px;">
@@ -58,11 +58,12 @@
 		{% if group_name %}
 			{% if num_coming == -1%}
 				<form action="" method="post">
+					<p>Please select the members of your group that will be attending.</p>
 					{% for invitee in invitees %}
 						 {{ invitee.first_name }}&nbsp;{{ invitee.last_name }}&nbsp;<input type="checkbox" name="checkbox" value="{{ invitee }}"><br>
 					{% endfor %}
 					<input type="hidden" name = "group_name" value="{{ group_name }}">
-					<input type="submit" name = "RSVP" value="RSVP">
+					<br/><input type="submit" name = "RSVP" value="RSVP">
 					{% csrf_token %}
 				</form>
 			{% else %}
@@ -74,8 +75,30 @@
 				</ul>
 				<p>If you would like to change your RSVP information, contact Jackson or Emma.</p>
 			{% endif %}
+		{% elif group_list %}
+			<p>More than one group has been found under that name. Please choose your group from list below. If you are unable to find your group, please contact Jackson or Emma.</p>
+			<form action="" method="post">
+					{% for group in group_list %}
+						 {{ group }}&nbsp;<input type="radio" name="radio" value="{{ group }}"><br>
+					{% endfor %}
+					<input type="hidden" name = "first_name" value="{{ first_name }}">
+					<input type="hidden" name = "last_name" value="{{ last_name }}">
+					<br/><input type="submit" name = "Choose Group" value="Choose Group">
+					{% csrf_token %}
+			</form>
+		{% elif first_last_list %}
+			<p>No invitees were found with names matching your search exactly, but the following invitees have the same or similar first or last names. If you are unable to find your name, please contact Jackson or Emma.</p>
+			<form action="" method="post">
+					{% for name in first_last_list %}
+						 {{ name }}&nbsp;<input type="radio" name="radio" value="{{ name }}"><br/>
+					{% endfor %}
+					<input type="hidden" name = "first_name" value="{{ first_name }}">
+					<input type="hidden" name = "last_name" value="{{ last_name }}">
+					<br/><input type="submit" name = "Choose Name" value="Choose Name">
+					{% csrf_token %}
+			</form>
 		{% endif %}
-                
+        
                 
                     
                     
@@ -89,8 +112,8 @@
         </div>
 
         
-        <div class="home-div  footer">
-            <p> Website developed by Jsquared Industries. Copyright 2017 &copy; </p>
+        <div class="home-div footer">
+             <p class="fuck" style="color:#ffffff; font-size:.5em"> Website developed by Jackson Bush and Jordan Weaver. Copyright 2017 &copy; </p>
     </div>
 
 </div>

@@ -70,6 +70,65 @@ body {
 #navB a:hover {
 	color:#000000;
 }
+/* ===========================================
+nav1
+============================================== */
+#nav1 {
+	width:100%;
+	margin:10 auto;
+	list-style:none;
+	position:fixed;
+	background-color: rgba(255, 255, 255, 0);
+	font-family: 'Roboto', sans-serif;
+	border: none;
+} 
+
+#nav1 li {
+	float:right;
+	margin:10px auto;
+	padding:30px 0px 10px 0px;4
+}
+
+#nav1 li:hover {
+	opacity: .5;
+}
+
+#nav1 a {
+	color: black;
+	display:block;
+	text-align:center;
+	width:150px; /* fixed width */
+	text-decoration:none; 
+}
+
+#nav1 li:first-child {
+	padding-right:40px;
+
+}
+
+#nav1 li:last-child {
+	float:left;
+	padding-left:40px;
+	color:#ffb570;
+
+}
+
+.navButton {
+	border:#ffffff solid 1px;
+	padding:10px 0px 10px 0px;
+
+
+}
+
+.navButton:hover {
+	background-color:#ffffff;
+}
+
+#navB a:hover {
+	color:#000000;
+}
+
+
 
 .container {
   max-width: 960px;
@@ -83,13 +142,14 @@ margin-top:0px;
 } 
 
 .footer {
-    height:100px;
+	height:100px;
     background:rgba(0,0,0, .88);
 }
 
 .footer p {
-    color:#000000;
-    font-size:1em;
+	text-align:center;
+    color:#ffffff;
+    font-size:2em;
     padding-top: 40px;
 }
 
@@ -135,6 +195,11 @@ home
     font-size: 1.5em;
     color:#474747;
     font-family: 'Roboto', sans-serif;
+}
+
+.homeh3 {
+    font-size:7em;
+	font-family: 'Roboto', sans-serif;
 }
 
 .homep {
@@ -247,7 +312,7 @@ home
 #home-ourStory .storyBlurb  {
     padding-top:30px;
     padding-bottom: 40px;
-    width:300px;
+    width:1000px;
     color:#494949;
     margin:auto;
     font-size:.85em;
@@ -451,14 +516,14 @@ contact
 RSVP 
 ============================================== */
 
-#RSVP-page .homeh1{
+#RSVP-page .homeh3{
 	margin-top:230px;
     
 
 }
 
 #RSVP-page {
-    background-image:url("img/gifts3d.jpg"); 
+    background-image:url("img/floral-Background.jpg"); 
     background-size: 1900px 700px;
     background-position:50% 0%;
 }
@@ -498,7 +563,7 @@ RSVP
 wedding info page
 ============================================== */
 #wedding-info-page {
-	background-image:url("img/redtail2.jpg"); 
+	background-image:url("img/redtail.jpg"); 
     background-position: 50% -270px;
     
 
@@ -533,7 +598,7 @@ wedding info page
 
 
 #what-to-do {
-	background-image: url("img/redtail.jpg");
+	background-image: url("img/elkhart2d.jpg");
 }
 
 
@@ -547,3 +612,10 @@ about
 	padding:10px;
 }
 
+.home-div footer{
+	color: #ffffff;
+}
+
+.fuck {
+	color:#ffffff
+}
