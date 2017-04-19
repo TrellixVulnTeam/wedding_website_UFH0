@@ -1,2 +1,5 @@
 *.pyc
-venv/
+
+wedding_env/
+staticfiles
+.env
