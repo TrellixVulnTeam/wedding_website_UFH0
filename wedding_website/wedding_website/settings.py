@@ -75,9 +75,9 @@ WSGI_APPLICATION = 'wedding_website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+
 import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+DATABASES['default'] =  dj_database_url.config()
 
 DATABASES = {
     'default': {
