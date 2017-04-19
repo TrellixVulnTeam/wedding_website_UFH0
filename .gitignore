@@ -1,3 +1,5 @@
 *.pyc
 
 wedding_env/
+staticfiles
+.env

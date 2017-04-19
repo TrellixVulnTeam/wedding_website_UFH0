@@ -1,7 +1,76 @@
 {% extends "base.html" %}
 
-{% block title %}Contact{% endblock %}
+<!DOCTYPE HTML> 
+<html>
+    <head>
+		{% block title %}{% endblock %}
+	</head>
 
-{% block content %}
-    <p>Our Contact Info!</p>
-{% endblock %}
+	<body>
+		{% block content %}
+		
+        
+        
+        
+        <div class="page-div">
+            
+            <div class="collapse navbar-collapse">
+		      <nav id="nav" class="navbar navbar-default">
+                <li id="navB">{% block nav-rsvp %} <a class="navButton" href="{% url 'rsvp' %}"> RSVP</a> {% endblock %}</li>
+                <li>{% block nav-home %}<a href="{% url 'home' %}">HOME</a>{% endblock %}</li>
+                <li>{% block nav-weddinginfo %}<a href="{% url 'wedding_info' %}"> WEDDING INFO</a>{% endblock %}</li>
+                <li>{% block nav-registry %}<a href="{% url 'registry' %}">REGISTRY</a>{% endblock %}</li>
+                <li>{% block nav-contact %}<a href="{% url 'contact' %}">CONTACT</a>{% endblock %}</li>
+                <li> Jackson and Emma</li>
+            </nav>
+            </div>
+            
+        <div id="contact-page" class="home-div parallax" style="height:600px">
+        	<div class="container">
+        		<h1 class="homeh1"> Contact Us </h1>
+                <p class="homep" style="color:#c4c4c4;"> Have more questions? We are happy to help.</p>
+        	</div>
+        </div>
+
+        
+        
+        
+        
+        <div id="home-ourStory" class="home-div page-div">
+            <div class="container-fluid" style="max-width: 1000px;">
+               
+                <div class="row" style="padding-top:40px; margin-top:40px;">
+                    <div class="col-md-6">
+                    <h3> Jackson's Info </h3>
+                    <p class="storyBlurb" style="line-height:27px;">
+                        Cell Phone: (574) 349-3868 </br>
+                    Email Address: jfbush15@gmail.com </br>
+                    </p>
+                    </div>
+                    
+                    <div class="col-md-6">
+                    <h3>Emma's Info </h3>
+                    <p class="storyBlurb" style="line-height:27px;">
+                        Cell Phone: (574) 533-1308 </br>
+                    Email Address: caskey2@gmail.com </br>
+                    </p>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+
+        
+       <div class="home-div footer">
+             <p class="fuck" style="color:#ffffff; font-size:.5em"> Website developed by Jackson Bush and Jordan Weaver. Copyright 2017 &copy; </p>
+    </div>
+
+</div>
+        
+        
+        
+        
+		{% endblock %}
+	</body>
+</html>

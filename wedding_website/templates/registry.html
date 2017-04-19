@@ -1,7 +1,69 @@
 {% extends "base.html" %}
 
-{% block title %}Registry{% endblock %}
+<!DOCTYPE HTML> 
+<html>
+    <head>
+		{% block title %}{% endblock %}
+	</head>
+	
+	<body>
+		{% block content %}
 
-{% block content %}
-    <p>Links to our registry! Buy us shit please.</p>
-{% endblock %}
+        <div class="page-div">
+            
+            <div class="collapse navbar-collapse">
+		      <nav id="nav" class="navbar navbar-default">
+                <li id="navB">{% block nav-rsvp %} <a class="navButton" href="{% url 'rsvp' %}"> RSVP</a> {% endblock %}</li>
+                <li>{% block nav-home %}<a href="{% url 'home' %}">HOME</a>{% endblock %}</li>
+                <li>{% block nav-weddinginfo %}<a href="{% url 'wedding_info' %}"> WEDDING INFO</a>{% endblock %}</li>
+                <li>{% block nav-registry %}<a href="{% url 'registry' %}">REGISTRY</a>{% endblock %}</li>
+                <li>{% block nav-contact %}<a href="{% url 'contact' %}">CONTACT</a>{% endblock %}</li>
+                <li> Jackson and Emma</li>
+            </nav>
+            </div>
+            
+			{% if rsvp == True %}
+				<p>Thanks for the RSVP! Here's some information about the wedding.</p>
+			{% endif %}
+            
+            
+            <div id="registry-page" class="home-div parallax" style="height:600px">
+        	<div class="container">
+        		<h1 class="homeh1"> Registry </h1>
+        	</div>
+        </div>
+
+
+        <div id="home-ourStory" class="home-div page-div">
+            <div class="container-fluid" style="max-width: 1000px;">
+               
+                
+                <div class="row">
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+                    <h2 class="homep" style="line-height:40px; font-size:1.6em; color:#6d6d6d;"> We are registered with </br></h2>
+                    <button> <a href="http://www.target.com/gift-registry/giftgiver?registryId=YHURTm-K3sstwfZCWgAGTQ#1"> Target </a> </button>&nbsp;&nbsp;
+					<button> <a href="https://www.rei.com/GiftRegistryDetails/14011886"> REI </a> </button>&nbsp;&nbsp;
+					<button> <a href="https://www.macys.com/wgl/registry/guest/6695306"> Macy's </a> </button>
+                <br/>
+				<br/>
+				<br/>
+				<br/>
+                    
+                </div>
+                
+            </div>
+        </div>
+
+        
+        <div class="home-div footer">
+             <p class="fuck" style="color:#ffffff; font-size:.5em"> Website developed by Jackson Bush and Jordan Weaver. Copyright 2017 &copy; </p>
+    </div>
+
+		</div>
+    	
+		{% endblock %}
+	</body>
+</html>

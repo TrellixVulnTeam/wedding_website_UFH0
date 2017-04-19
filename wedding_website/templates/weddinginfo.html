@@ -1,13 +1,108 @@
 {% extends "base.html" %}
 
-{% block title %}Wedding Info{% endblock %}
+<!DOCTYPE HTML> 
+<html>
+    <head>
+		{% block title %}{% endblock %}
+	</head>
+	
+	<body>
+		{% block content %}
+		
+       
+        <div class="page-div">
+            
+            <div class="collapse navbar-collapse">
+		      <nav id="nav" class="navbar navbar-default">
+                <li id="navB">{% block nav-rsvp %} <a class="navButton" href="{% url 'rsvp' %}"> RSVP</a> {% endblock %}</li>
+                <li>{% block nav-home %}<a href="{% url 'home' %}">HOME</a>{% endblock %}</li>
+                <li>{% block nav-weddinginfo %}<a href="{% url 'wedding_info' %}"> WEDDING INFO</a>{% endblock %}</li>
+                <li>{% block nav-registry %}<a href="{% url 'registry' %}">REGISTRY</a>{% endblock %}</li>
+                <li>{% block nav-contact %}<a href="{% url 'contact' %}">CONTACT</a>{% endblock %}</li>
+                <li> Jackson and Emma</li>
+            </nav>
+            </div>
+            
+			{% if rsvp == True %}
+				<p>Thanks for the RSVP! Here's some information about the wedding.</p>
+			{% endif %}
+            
+            
+            <div id="wedding-info-page" class="home-div parallax" style="height:600px">
+        	<div class="container">
+        		<h1 class="homeh1"> Red Tail Farm </h1>
+        	</div>
+        </div>
 
-{% block content %}
-	{% if rsvp == True %}
-	<p>Thanks for the RSVP! Here's some information about the wedding.</p>
-	{% endif %}
-    <p>Shit about our wedding. When, where, who, how.</p><br/><br/>
-	<p>Hotel Information:<br/><strong>Holiday Inn Express & Suites.</strong><br/>109.99 a night for a Double Queen Room, 104.99 a night for a King Room.<br/></p>
-	<p><br/><strong>Hampton Inn</strong><br/>104.99 a night for either a Double Queen Room or a King Room.<br/></p>
-	<iframe src="https://www.google.com/maps/d/u/0/embed?mid=12KefaevJp3EnEOxCzFzUjjfMck8" width="640" height="480"></iframe>
-{% endblock %}
+
+        <div id="home-ourStory" class="home-div page-div">
+            <div class="container-fluid">
+                <h2 class="homeh2">Directions</h2>
+                <p class="descriptionP"> 303 West Waverly Avenue, Goshen, IN, 46526. </p>
+				<p class="descriptionP">Parking on Waverly off of Main Street. There will be signs for parking. Parking is a short walk to the barn. If you need handicap parking or other accomodations, contact Emma at caskey2@gmail.com to coordinate.</p>
+				<br/>
+				<h2 class="homeh2">Hotels</h2>
+                <p class="descriptionP">Hotel Information is provided below for your convenience. We have a couple hotels to choose from but there are many more available. If you choose to stay at another hotel location feel free to let us know. </p>
+                   
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=12KefaevJp3EnEOxCzFzUjjfMck8" width="70%" height="400"></iframe>
+                
+                    <div class="row" style="padding-top:20px;">
+                    <div class="container-fluid" style="width:900px;">
+                        <div class="col-md-6"> 
+                            
+                            <h3 style="color:#FBC676">Holiday Inn Express & Suites</h3>
+                            <p class="storyBlurb">109.99 a night for a Double Queen Room, 104.99 a night for a King Room. </br> 1.7 miles from Red Tail Farm</p>
+                        </div>
+                        
+                        <div class="col-md-6">
+                           
+                            <h3 style="color:#FBC676">Hampton Inn</h3>
+                            <p class="storyBlurb">104.99 a night for either a Double Queen Room or a King Room. </br> 2.1 miles from Red Tail Farm</p>
+                        </div>
+                    </div>
+                    </div> 
+                
+            </div>
+        </div>
+
+        
+        
+         <div id="what-to-do" class="home-div parallax non-main">
+            <div class="container-fluid" style="text-align:center;">
+            <h1 class="homeh1"> Things to Do </h1>
+            <p class="homep"> Activities in the Elkhart area </p>
+             </div>
+        </div>
+
+
+        <div id="home-schedule" class="home-div">
+            <div class="container-fluid" style="max-width:1100px;">
+                                    
+                
+                <div class="row">
+                    <div class="col-md-4">
+                    <h3> Food & Drink </h3>
+                    <p class="homep"><a href="http://commonspirits.com/"> Common Spirits</a>, <a href="http://goshenbrewing.com/"> Goshen Brewing Company</a>, <a href="https://www.annasbread.com/">Anna's Bread</a>, <a href="http://eatventuri.com/"> Venturi </a></p>
+                    </div>
+                    
+                    <div class="col-md-4">
+                    <h3>Play</h3>
+                    <p class="homep"><a href="http://pumpkinvine.org/"> Biking on Pumpkinvine</a>, <a href="http://www.indianatrails.com/?q=content/mill-race-trail-goshen">Strolling along the Millrace</a></p>
+                    </div>
+                    
+                    <div class="col-md-4">
+                    <h3>Shop</h3>
+                    <p class="homep"> <a href="https://soapygnome.myshopify.com/">Soapy Gnome</a>, <a href="http://www.flowersbyphoebe.com/">Flowers by Phoebe</a>, <a href="http://www.goshenfarmersmarket.org/">Farmers Market (Saturday morning)</a>,<a href ="http://www.foundgoshen.com/"> FOUND</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <div class="home-div footer">
+            <p class="fuck" style="color:#ffffff; font-size:.5em"> Website developed by Jackson Bush and Jordan Weaver. Copyright 2017 &copy; </p>
+    </div>
+
+		</div>
+		{% endblock %}
+	</body>
+</html>
