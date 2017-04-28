@@ -3,8 +3,7 @@
     <head>
         {% block title %}{% endblock %}
         {% load static %}
-        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
-      rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="{% static 'styles.css' %}">
     </head>
 	
@@ -22,12 +21,13 @@
                 <li>{% block nav-contact %}<a href="{% url 'contact' %}">Contact</a>{% endblock %}</li>
             </ul>
         {% endblock %} -->
+
+
         
 		{% block content %}
         
-
-        <script src="{% static 'app.js' %}"></script>
-        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="{% static './js/app.js' %}"></script>
         {% endblock %}
     </body>
 </html>

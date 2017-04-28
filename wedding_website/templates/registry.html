@@ -9,9 +9,60 @@
 	<body>
 		{% block content %}
 
-		<div class="page-div">
-    		<p id="registery-links">Links to our registry! Buy us shit please.</p>
-    	</div>
+        <div class="page-div">
+            
+            <div class="collapse navbar-collapse">
+		      <nav id="nav" class="navbar navbar-default">
+                <li id="navB">{% block nav-rsvp %} <a class="navButton" href="{% url 'rsvp' %}"> RSVP</a> {% endblock %}</li>
+                <li>{% block nav-home %}<a href="{% url 'home' %}">HOME</a>{% endblock %}</li>
+                <li>{% block nav-weddinginfo %}<a href="{% url 'wedding_info' %}"> WEDDING INFO</a>{% endblock %}</li>
+                <li>{% block nav-registry %}<a href="{% url 'registry' %}">REGISTRY</a>{% endblock %}</li>
+                <li>{% block nav-contact %}<a href="{% url 'contact' %}">CONTACT</a>{% endblock %}</li>
+                <li> Yesenia & Jordan</li>
+            </nav>
+            </div>
+            
+			{% if rsvp == True %}
+				<p>Thanks for the RSVP! Here's some information about the wedding.</p>
+			{% endif %}
+            
+            
+            <div id="registry-page" class="home-div parallax" style="height:600px">
+        	<div class="container">
+        		<h1 class="homeh1"> Gift Registry </h1>
+                <p class="homep"> Help us start our journey</p>
+        	</div>
+        </div>
+
+
+        <div id="home-ourStory" class="home-div page-div">
+            <div class="container-fluid" style="max-width: 1000px;">
+                <div class="row">
+                    <h2 class="homeh2" style="line-height:40px;"> We appriciate all of the support that each of you have provided to us throughout our lives. We look forward to seeing you on our big day and ask that you contribute to our registry. This helps us get on our feet for when we start our new life together and it is very appriciated.</h2>
+                </div>
+                
+                <div class="row">
+                    <h2 class="homep" style="line-height:40px; font-size:1.6em; color:#6d6d6d;"> We are registered with </br></h2>
+                    <button> <a href="http://www.target.com/gift-registry/giftgiver?registryId=2f4a58a09a234e2ea4663dbc96b67719"> Target </a> </button>
+                    <button> <a href="https://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?pwsToken=&eventType=Wedding&inventoryCallEnabled=true&registryId=544444066&pwsurl="> Bed, Bath & Beyond </a> </button>
+                    <button> <a href="https://www.bestbuy.com"> Best Buy </a> </button>
+                    <button> <a href="https://www.rei.com/lists"> REI </a> </button>
+                
+                    <h2 class="homeh2">Here is how it works:</br></h2>
+                    <p class="homep" style="font-size:1.2em; padding-top:30px;">1). Just click on of the store registry buttons above </br></p>
+                    <p class="homep" style="font-size:1.2em;">2). Search through the options we have selected </br></p>
+                    <p class="homep" style="font-size:1.2em; padding-bottom:100px;">3). Choose a gift, you can bring it to the wedding or ship it to this address:</br> 520 N Bruce St. Lanark IL, 61046</br></p>
+                </div>
+                
+            </div>
+        </div>
+
+        
+        <div class="home-div  footer">
+            <p> Website developed by Jsquared Industries. Copyright 2017 &copy; </p>
+        </div>
+
+		</div>
     	
 		{% endblock %}
 	</body>

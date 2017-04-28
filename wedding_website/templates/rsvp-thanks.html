@@ -3,8 +3,91 @@
 {% block title %}Thanks for the RSVP!{% endblock %}
 
 {% block content %}
-     <p>Shit about our wedding. When, where, who, how.</p><br/><br/>
-	<p>Hotel Information:<br/><strong>Holiday Inn Express & Suites.</strong><br/>109.99 a night for a Double Queen Room, 104.99 a night for a King Room.<br/></p>
-	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5969.828058476856!2d-85.81396944663221!3d41.571105211424786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdf7de3417f86b4c4!2sHoliday+Inn+Express+%26+Suites+Goshen!5e0!3m2!1sen!2sus!4v1486083251020" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-	
+           
+<div class="page-div">
+            
+            <div class="collapse navbar-collapse">
+		      <nav id="nav" class="navbar navbar-default">
+                <li id="navB">{% block nav-rsvp %} <a class="navButton" href="{% url 'rsvp' %}"> RSVP</a> {% endblock %}</li>
+                <li>{% block nav-home %}<a href="{% url 'home' %}">HOME</a>{% endblock %}</li>
+                <li>{% block nav-weddinginfo %}<a href="{% url 'wedding_info' %}"> WEDDING INFO</a>{% endblock %}</li>
+                <li>{% block nav-registry %}<a href="{% url 'registry' %}">REGISTRY</a>{% endblock %}</li>
+                <li>{% block nav-contact %}<a href="{% url 'contact' %}">CONTACT</a>{% endblock %}</li>
+                <li> Yesenia & Jordan</li>
+            </nav>
+            </div>
+            
+        <div id="RSVP-page" class="home-div parallax" style="height:600px">
+        	<div class="container">
+        		<h1 class="homeh1"> RSVP </h1>
+                <p class="homep" style="color:#dbdbdb;"> Let us know if you can make it</p>
+        	</div>
+        </div>
+
+        
+        
+        
+        
+        <div id="home-ourStory" class="home-div page-div">
+            <div class="container-fluid" style="max-width: 1000px;">
+                <div class="row">
+                    
+                    
+                    
+                    
+                    
+                    <h1 id="RSVP-header" style="margin-top:90px;">Enter your first and last name below:</h1>
+
+		<form id="RSVP-form" action="" method="post">
+			<table style="line-height:40px;">
+				{{ form.as_table }}
+			</table>
+			{% csrf_token %}
+			<input id="RSVP-submit" type="submit" name = "search" value="Submit">
+		</form>
+	    <br>
+		<br>
+		
+		{% if group_name %}
+			{% if num_coming == -1%}
+				<form action="" method="post">
+					{% for invitee in invitees %}
+						 {{ invitee.first_name }}&nbsp;{{ invitee.last_name }}&nbsp;<input type="checkbox" name="checkbox" value="{{ invitee }}"><br>
+					{% endfor %}
+					<input type="hidden" name = "group_name" value="{{ group_name }}">
+					<input type="submit" name = "RSVP" value="RSVP">
+					{% csrf_token %}
+				</form>
+			{% else %}
+				<p>Your group has already RSVP'd for the wedding. Here's the RSVP information.</p><br>
+				<ul>
+				{% for invitee in invitees %}
+					<li>{{ invitee.first_name }}&nbsp;{{ invitee.last_name }}&nbsp;-&nbsp;{% if invitee.confirmed == True %}Coming{% else %}Not Coming{% endif %}</li>
+				{% endfor %}
+				</ul>
+				<p>If you would like to change your RSVP information, contact Jackson or Emma.</p>
+			{% endif %}
+		{% endif %}
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+                
+            </div>
+        </div>
+
+        
+        <div class="home-div  footer">
+            <p> Website developed by Jsquared Industries. Copyright 2017 &copy; </p>
+    </div>
+
+</div>
+
+
+        
 {% endblock %}
